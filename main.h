@@ -5,6 +5,6 @@
 #ifndef PWDTOOLS_MAIN_H
 #define PWDTOOLS_MAIN_H
 
-#include <string>
-#include "include/json.hpp"
+#include "./tools/LenCount.h"
+
 #endif //PWDTOOLS_MAIN_H

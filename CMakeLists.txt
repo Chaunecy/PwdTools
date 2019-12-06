@@ -3,4 +3,5 @@ project(PwdTools)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(PwdTools main.cpp tools/LenCount.cpp main.h)
+add_executable(PwdTools main.cpp tools/LenCount.cpp main.h tools/LenCount.h)
+add_executable(Test test.cpp)
