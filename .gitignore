@@ -1,3 +1,7 @@
 cmake-build-debug
 .idea
+pwd_tool_cxx
 pwd_tool
+strategy/strategy
+strategy/random_sample
+strategy/k_folder

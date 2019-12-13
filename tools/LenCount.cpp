@@ -11,7 +11,7 @@ double round(double fraction, int pos) {
     for (int i = 0; i < pos; i++) {
         t *= 10;
     }
-    return ((double) ((int) fraction * t)) / t;
+    return ((double) ((int) (fraction * t))) / t;
 }
 
 std::string len_cnt(const std::vector<std::string> &filenames,
@@ -20,9 +20,7 @@ std::string len_cnt(const std::vector<std::string> &filenames,
                     int length_upper_bound) {
 
     auto failure = R"({"success":false})";
-    std::cout << filenames.size() << " " << shownames.size() << std::endl;
     if (filenames.size() != shownames.size() || filenames.empty()) {
-        std::cout << "error" << std::endl;
         return failure;
     }
     std::ifstream ifs;
@@ -56,11 +54,12 @@ std::string len_cnt(const std::vector<std::string> &filenames,
             json j;
             j["length"] = pair.first;
             j["count"] = pair.second;
-            j["proportion"] = round((double) pair.second / total_lines, 2);
+            j["proportion"] = round((double) pair.second / total_lines * 100, 2);
             j["dataset"] = shownames.at(file_idx);
             arr.push_back(j);
         }
         file_idx += 1;
+        ifs.close();
     }
     return arr.dump();
 }

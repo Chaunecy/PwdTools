@@ -1,4 +1,4 @@
-#include "./main.h"
+#include "pwd_tool.h"
 
 int main(int argc, char *argv[]) {
     bool len_cnt = false, draw = false, not_found = false;
