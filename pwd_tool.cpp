@@ -7,16 +7,15 @@ int main(int argc, char *argv[]) {
                     clipp::option("--draw").set(draw) % "using draw"
     );
     clipp::parse(argc, argv, cli);
+    std::string result;
     if (len_cnt) {
-        std::cout << "len-cnt" << std::endl;
-        std::string result = LenCount::parse(argc, argv);
-        std::cout << result << std::endl;
+        result = LenCount::parse(argc, argv);
     } else if (draw) {
         std::cout << "not implemented" << std::endl;
     } else {
         std::cout << "not found" << std::endl;
     }
+    std::cout << result << std::endl;
 
-//    auto cli = (());
     return 0;
 }
