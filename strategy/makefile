@@ -1,19 +1,18 @@
 CXXFLAGS = -std=c++11 -O3 -Wall
 LDFLAGS = -std=c++11 -O3 -no-pie
 
-TARGET = random_sample k_folder clean-o
+TARGET = random_sample k_folder
 all: $(TARGET)
 
-random_sample: ./random_sample.cpp ./random_sample.h
-	g++ ./random_sample.cpp $(CXXFLAGS) -o $@ -no-pie
+random_sample: strategy/random_sample.cpp strategy/random_sample.h
+	g++ strategy/random_sample.cpp $(CXXFLAGS) -o $@ -no-pie
 
-k_folder: ./k_folder.cpp ./k_folder.h
-	g++ ./k_folder.cpp $(CXXFLAGS) -o $@ -no-pie
+k_folder: strategy/k_folder.cpp strategy/k_folder.h
+	g++ strategy/k_folder.cpp $(CXXFLAGS) -o $@ -no-pie
 
-# -std=c++11 -I/usr/include/python2.7 -lpython2.7
-.PHONY: clean clean-o
-clean:
-	rm -f strategy
-
-clean-o:
-	rm -f *.o
+# .PHONY: clean clean-o
+# clean:
+# 	rm -f random_sample k_folder
+#
+# clean-o:
+# 	rm -f *.o

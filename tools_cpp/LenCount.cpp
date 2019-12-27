@@ -77,3 +77,8 @@ std::string LenCount::parse(int argc, char *argv[]) {
     std::string result = len_cnt(filenames, shownames, length_lower_bound, length_upper_bound);
     return result;
 }
+
+int main(int argc, char *argv[]) {
+    std::cout << LenCount::parse(argc, argv) << std::endl;
+    return 0;
+}

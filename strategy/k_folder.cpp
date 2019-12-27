@@ -41,10 +41,10 @@ std::string k_folder(const std::string &file, int k,
             auto end = passwords.begin() + std::min((j + 1) * batch, size);
             if (i == j) {
                 for (; it != end; it++)
-                    ofs_test << *it << std::endl;
+                    ofs_test << *it << '\n';
             } else {
                 for (; it != end; it++)
-                    ofs_train << *it << std::endl;
+                    ofs_train << *it << '\n';
                 ofs_train.flush();
             }
         }

@@ -1,7 +1,9 @@
 cmake-build-debug
 .idea
-pwd_tool_cxx
-pwd_tool
-strategy/strategy
-strategy/random_sample
-strategy/k_folder
+random_sample
+k_folder
+len_count
+*.o
+venv
+__pycache__
+/*.py
