@@ -2,7 +2,7 @@
 
 ## List of tools
 
-this is a project of password tools which includes:
+This is a project of password tools which includes:
 
 1. compare guesses with test set
 2. draw the picture of guess-crack curve
