@@ -68,7 +68,7 @@ std::string KFolder::parse(int argc, char **argv) {
     if (clipp::parse(argc, argv, cmdline)) {
         return k_folder(file, k, training_files, testing_files);
     } else {
-        std::cerr << clipp::make_man_page(cmdline, "k-folder") << std::endl;
+        std::cerr << clipp::usage_lines(cmdline, "k-folder") << std::endl;
         std::exit(1);
     }
 }

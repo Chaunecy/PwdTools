@@ -73,9 +73,13 @@ std::string LenCount::parse(int argc, char *argv[]) {
             (clipp::required("-t", "--tags") & clipp::values("tags", shownames)),
             (clipp::option("-l", "--lower") & clipp::value("length_lower_bound", length_lower_bound)),
             (clipp::option("-u", "--upper") & clipp::value("length_upper_bound", length_upper_bound)));
-    clipp::parse(argc, argv, cli);
-    std::string result = len_cnt(filenames, shownames, length_lower_bound, length_upper_bound);
-    return result;
+    if (clipp::parse(argc, argv, cli)) {
+        std::string result = len_cnt(filenames, shownames, length_lower_bound, length_upper_bound);
+        return result;
+    } else {
+        std::cerr << clipp::usage_lines(cli, "len_count") << std::endl;
+        std::exit(1);
+    }
 }
 
 int main(int argc, char *argv[]) {

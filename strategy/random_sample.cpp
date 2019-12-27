@@ -49,8 +49,8 @@ std::string RandomSample::parse(int argc, char *argv[]) {
             (clipp::option("-l", "--lower") & clipp::value("lower bound", length_lower_bound)),
             (clipp::option("-u", "--upper") & clipp::value("upper bound", length_upper_bound)));
     if (!clipp::parse(argc, argv, cmdline)) {
-        std::cerr << clipp::make_man_page(cmdline, "random_sample") << std::endl;
-        std::exit(2);
+        std::cerr << clipp::usage_lines(cmdline, "random_sample") << std::endl;
+        std::exit(1);
     }
     std::string result = sample(file, sampled_file, sampled_size, length_lower_bound, length_upper_bound);
     return result;
